@@ -1,0 +1,143 @@
+.outer-articles {
+    padding: 70px 90px 20px;
+}
+
+.articles-container {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(2,1fr);
+    gap: 40px;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.articles-container .article {
+    background-color: #ffffff;
+    padding-bottom: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.articles-container .article:hover button  {
+    background-color: #3f4ecf;
+}
+
+.articles-container .article img {
+    height: fit-content;
+    width: 100%;
+}
+
+.articles-container .article .more-info {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1.5px solid rgba(89, 103, 229, 0.4);
+}
+
+.articles-container .article .more-info svg:first-child {
+    font-size: 25px;
+    color: #5967E5;
+}
+
+.articles-container .article .more-info .date {
+    font-size: 22px;
+    color: #5967E5;
+}
+
+.articles-container .article .more-info span {
+    padding: 0 40px 0 8px;
+    font-size: 15px;
+}
+
+.articles-container .article h3 {
+    padding: 25px 20px;
+}
+
+.articles-container .article button {
+    padding: 9px 30px;
+    margin-left: 20px;
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    background-color: #5967E5;
+    color: #ffffff;
+    font-size:15px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.7px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.articles-container .article button svg {
+    margin-left: 6px;
+    font-size: 22px;
+}
+
+@media screen and (max-width:950px) {
+    .outer-articles {
+        padding: 70px 60px 20px;
+    }
+
+    .articles-container {
+        gap: 40px;
+    }
+}
+    
+    
+    @media screen and (max-width:750px) {
+        .outer-articles {
+            padding: 70px 30px 20px;
+        }
+    
+        .articles-container {
+            gap: 30px;
+        }
+        
+    }
+
+    @media screen and (max-width:750px) {
+        .outer-articles {
+            padding: 70px 30px 20px;
+        }
+    
+        .articles-container {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+
+        .articles-container .article {
+            width: 100%;
+        }
+        
+    }
+
+    @media screen and (max-width:550px) {
+        .articles-container .article .more-info span {
+            font-size: 14px;
+            padding: 0 25px 0 8px;
+        }
+    
+        .articles-container .article .more-info svg:first-child {
+            font-size: 30px;;
+        }
+        
+        .articles-container .article .more-info .date {
+            font-size: 22px;
+        }
+
+        .articles-container .article h3 {
+            font-size:19px;
+            line-height: 18px;
+        }
+        
+        .articles-container .article button {
+            padding: 10px 18px;
+            font-size:14px;
+        }
+
+        .articles-container .article button svg {
+            font-size: 20px;
+        }
+
+    }

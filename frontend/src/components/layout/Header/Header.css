@@ -1,0 +1,478 @@
+.navBar {
+    display: flex;
+    max-width: 1250px;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.outer-navBar {
+    padding: 15px 20px;
+}
+
+
+.menu {
+    transition: transform .5s ease-in-out;
+}
+
+.menu-bg-inactive {
+    position: absolute;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3;
+    width: 100%;
+    right: 0;
+    top: 0;
+    opacity: 1;
+    visibility: hidden;
+    transform: translateX(-1500px);
+}
+
+.menu-bg-active {
+    position: absolute;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3;
+    width: 100%;
+    right: 0;
+    top: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0px);
+}
+
+.menu .menu-content svg:first-child {
+    font-size: 30px;
+    padding: 10px 5px 5px 5px;
+    margin-right: 10px;
+}
+
+
+
+.outer-navBar div a {
+    display: block;
+    text-align: start;
+    text-decoration: none;
+    color: black;
+    font: 400 17px interRegular;
+    padding: 15px 20px;
+}
+
+.menu .menu-content a,
+.menu .semester a {
+    display: block;
+    text-align: start;
+    text-decoration: none;
+    color: black;
+    font: 400 17px interRegular;
+    padding: 15px 20px;
+}
+
+.menu .menu-content a:nth-child(2),
+.menu .menu-content a:nth-child(3) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+
+.menu .menu-content div .expand,
+.menu .semester .expand {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.menu .menu-content div .expand svg,
+.menu .semester .expand svg {
+    font-size: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+
+.menu .menu-content {
+    width: 75%;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    text-align: end;
+}
+
+.menu .menu-content a,
+.flag,
+.menu .semester a {
+    transition: color .2s ease-in-out;
+}
+
+.menu .menu-content a:hover,
+.flag:hover,
+.menu .semester a:hover {
+    color: #5967E5;
+}
+
+.menu .menu-content p {
+    padding: 15px 20px;
+    font: 400 17px interRegular;
+
+}
+
+.menu .menu-content .nav-buttons {
+    position: absolute;
+    bottom: 10px;
+    width: 75%;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+
+
+}
+
+.menu .menu-content .nav-buttons input {
+    width: 100%;
+    height: 110%;
+    z-index: 5;
+}
+
+.menu .menu-content .nav-buttons a:first-child {
+    padding-right: 0;
+}
+
+.menu .semester {
+    transition: transform .3s ease-in-out;
+}
+
+.menu .sem-enabled {
+    position: absolute;
+    width: 75%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    top: 0;
+    left: 0;
+    transform: translateX(0);
+}
+
+.menu .sem-enabled a {
+    border: none !important;
+    margin: 0 20px;
+    transition: all .2s ease-in-out;
+}
+
+.menu .sem-enabled a:hover {
+    background-color: #5967E5;
+    color: white;
+}
+
+.menu .sem-enabled .expand {
+    cursor: unset;
+}
+
+.menu .sem-enabled .expand p {
+    padding: 15px 20px;
+    font-size: 17px;
+}
+
+.menu .sem-enabled .expand a {
+    border-bottom: none;
+}
+
+.menu .sem-enabled .expand svg:first-child {
+    padding-left: 10px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+
+.menu .sem-disabled {
+    width: 0;
+    height: 0;
+    transform: translateX(200px);
+}
+
+.navBar .logo {
+    width: 148px;
+    height: 37px;
+    cursor: pointer;
+}
+
+.navBar .a-logo {
+    padding: 0;
+}
+
+.navBar .nav-items-container {
+    list-style: none;
+    display: flex;
+}
+
+
+
+.navBar .nav-items-container a {
+    position: relative;
+    text-decoration: none;
+    font: 400 16px interRegular;
+    color: black;
+    padding: 16px 27px;
+    transition: color .2s ease-in-out;
+    margin-right: 5px;
+}
+
+.navBar .nav-items-container a:hover,
+.navBar .nav-items-container .div-navItem:hover {
+    color: #5967E5;
+}
+
+.navBar .nav-items-container .div-navItem {
+    align-self: center;
+    padding: 16px 27px;
+    cursor: pointer;
+}
+
+
+.navBar .nav-items-container .nav-item {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50px;
+    width: 220px;
+    border-top: 4px solid #5967E5;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    z-index: 2;
+ 
+}
+
+
+.navBar .nav-items-container .inactive {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.navBar .nav-items-container .active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.navBar .nav-items-container .nav-item a {
+    margin: 0;
+    padding: 12px 18px;
+    border-bottom: 1px solid rgba(78, 78, 78, 0.1);
+    transition: all .2s ease-in-out;
+}
+
+.navBar .nav-items-container .nav-item a:hover {
+    background-color: #5967E5;
+    color: white;
+
+}
+
+.navBar .nav-items-container .nav-item a:first-child {
+    border-radius: 12px 12px 0 0;
+
+}
+
+.navBar .nav-items-container .nav-item a:last-child {
+    border-radius: 0px 0px 12px 12px;
+
+}
+
+.navBar .left-nav-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.navBar .logged-user-btn {
+    background-color: #5967E5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+}
+
+.navBar .logged-user-btn img {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+
+
+.navBar .logged-user-btn p {
+    font: 400 14.5px interRegular;
+    padding: 0 6px;
+    color: white;
+}
+
+
+.navBar .nav-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+
+
+.navBar .nav-buttons input,
+.menu .menu-content input {
+    background: #5967E5;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 11px;
+    font: 400 13px interSemiBold;
+    color: white;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.navBar .nav-buttons a {
+    padding: 0;
+
+}
+
+.navBar .nav-buttons input:hover {
+    opacity: 0.8;
+}
+
+.navBar .menu-icon svg {
+    font-size: 40px;
+    padding-left: 14px;
+}
+
+.account-panal {
+    position: absolute;
+    background-color: #ffffff;
+    top: 150%;
+    right: 0;
+    border-radius: 8px;
+    width: 160px;
+
+}
+
+.account-panal div {
+    position: relative;
+}
+
+.account-panal div:hover a,
+.navBar .account-panal div:hover svg {
+    color: #5967E5;
+}
+
+.account-panal div svg {
+    position: absolute;
+    top: 20%;
+    font-size: 18px;
+    padding-left: 22px;
+}
+
+.account-panal div:first-child svg {
+    top: 42%;
+}
+
+.account-panal a {
+    font: 400 14px interRegular !important;
+    padding: 20px 20px 20px 50px !important;
+}
+
+.account-panal div:first-child a {
+    padding-bottom: 10px !important;
+}
+
+.account-panal div:nth-child(2) a {
+    padding-bottom: 10px !important;
+    padding-top: 10px !important;
+}
+
+.account-panal div:last-child a {
+    padding-top: 10px !important;
+}
+
+.menu .menu-content .nav-buttons div {
+    position: relative;
+    transition: all .2s ease-in-out;
+}
+
+.menu .menu-content .nav-buttons div:hover {
+    opacity: 0.8;
+}
+
+.menu .menu-content .nav-buttons div svg {
+    position: absolute;
+    font-size: 20px;
+    color: white;
+    left: 25%;
+    top: -2%;
+
+}
+
+@media screen and (min-width:951px) and (max-width:1100px) {
+    .navBar .nav-items-container a {
+        margin-right: 0;
+        font-size: 17px;
+        padding: 20px;
+    }
+
+    .navBar .nav-items-container a:last-child {
+        margin-right: 0px;
+
+    }
+
+    .navBar .nav-items-container a:first-child {
+        margin-left: 0px;
+
+    }
+
+}
+
+@media screen and (max-width:499px) {
+    .navBar .logo {
+        width: 160px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    .navBar .logged-user-btn img {
+        width: 25px;
+        height: 25px;
+        border-radius: 100%;
+    }
+
+    .navBar .logged-user-btn {
+        padding: 4px 4px;
+    }
+
+    .account-panal {
+        width: 165px;
+    
+    }
+
+    .account-panal div svg{
+        font-size: 21px;
+     }
+
+     .account-panal a {
+        font-size: 15px !important;
+        padding: 25px 25px 25px 55px !important;
+    }
+
+
+    .account-panal div:last-child a {
+        padding-top: 12px !important;
+    }
+
+    
+}
+
+@media screen and (max-width:955px) {
+    .navBar .logged-user-btn {
+        justify-items: end;
+    }
+}

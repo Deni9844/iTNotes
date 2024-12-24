@@ -1,0 +1,207 @@
+.cover {
+    background: linear-gradient(to bottom, rgba(144, 23, 186, 0.8), rgba(89, 103, 229, 1));
+    color: white;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:20px
+}
+
+.cover h2{
+    font-size: clamp(30px,5vw,35px);
+    font-family: interSemiBold;
+    margin-bottom: 10px;
+}
+
+.cover p{
+    font:400 15px interLight
+}
+.cs-container-outer{
+    margin: 60px 0px;
+    background-color: rgb(255, 255, 255); 
+}
+
+.cs-container{
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2,49%);
+    gap: 40px;
+
+  }
+
+  .cs-container .cs-card {
+    position: relative;;
+    box-shadow: 2px 2px 6px  rgba(0,0,0,0.27);
+    border-radius: 10px;
+    padding: 20px 20px 0px 20px;
+    cursor: pointer;
+
+  }
+
+  .cs-container .cs-card h4{
+    font: 400 clamp(20px,5vw,24px) interSemiBold;
+    margin-bottom: 15px;
+  }
+
+  .cs-container .cs-card p{
+    font: 400 18px interRegular;
+    margin-bottom: 15px;
+    line-height: 27px;
+
+  }
+
+  .cs-container .cs-card .num{
+    margin-bottom: 0px;
+
+  }
+
+  .cs-container .cs-card img{
+    width: 20px;
+    margin-right: 10px;
+  }
+
+  .cs-container .cs-card .cd-ch-container{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .cs-container .cs-card .cd-ch-container .code svg{
+    width: 25px;
+    margin-right: 10px;
+  }
+
+  .cs-container .cs-card div:not(.card-bottom,.cs-content,.cs-content-left,.cs-content-right)  {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+  }
+
+  .cs-container .cs-card div:not(.card-bottom) span {
+   font-size: 14px;
+  }
+
+  .cs-container .cs-card .hr-line{
+    position: absolute;
+    left: 0;
+   width: 100%;
+   height: 52px;
+   background-color: #F8F9FF;
+   border-top: 2px solid #5967E5;
+   }
+
+  .cs-container .cs-card .card-bottom {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+
+   }
+
+  .cs-container .cs-card .card-bottom button{
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border: none;
+    background-color: #5967E5;
+    border-radius: 8px;
+    color: white;
+    font: 200 13px interSemiBold;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+   }
+
+   .cs-container .cs-card:hover .card-bottom button {
+       background-color: #3849e9;
+   }
+   .cs-container .cs-card .card-bottom button img{
+   width: 7px;
+   margin-left: 12px;
+   margin-right: 0;
+   }
+
+   .cs-container .cs-card .cs-content .cs-content-right {
+      display: inline-flex;
+      justify-content: center;
+      height: 50px;
+      width: 52px;
+      margin: 0 auto;
+      align-items: center;
+      border-radius: 50px;
+      background-color: #5967E5;
+      color: white;
+  }
+
+  .cs-container .cs-card .cs-content .cs-content-right svg {
+   font-size: 25px;
+}
+
+.outer-cover{
+    max-width: 1150px;
+    margin: 60px auto;
+    padding: 0 50px;
+
+}
+
+@media screen and (min-width:700px)  and (max-width:870px) {
+  .cs-container{
+    padding: 50px 20px !important;
+  }
+}
+
+@media screen and (max-width:699px) {
+  .cs-container{
+    grid-template-columns: 1fr;
+    padding: 50px 20px !important;
+  }
+}
+
+@media screen and (max-width:550px) {
+  .subjects-conatiner{
+    padding: 20px ;
+  }
+
+.cover p {
+  font-size: 14px;
+}
+
+
+
+.cs-container .cs-card img {
+  width: 20px;
+
+}
+
+.cs-container .cs-card .card-bottom button {
+  padding: 12px;
+  font-size: 14px;
+}
+
+.cs-container .cs-card p{
+  font-size: 16px;
+
+}
+
+.cs-container .cs-card .cs-content .cs-content-right {
+  height: 42px;
+  width: 45px;
+}
+
+.cs-container .cs-card .cs-content .cs-content-right svg {
+  font-size: 22px;
+}
+
+.cs-container .cs-card {
+  padding: 20px 0px 10px 20px;
+
+}
+
+.cs-container .cs-card .card-bottom {
+  padding: 8px 12px 0 0px;
+}
+}

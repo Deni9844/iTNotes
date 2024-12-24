@@ -1,0 +1,37 @@
+{
+  "name": "itnotes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "backend/sentimentAnalysis/train",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js",
+    "train": "node backend/sentimentAnalysis/train.js",
+    "predict": "node backend/sentimentAnalysis/predict.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.22.0",
+    "@tensorflow/tfjs-node": "^4.22.0",
+    "axios": "^1.7.7",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cloudinary": "^2.0.0",
+    "cookie-parser": "^1.4.6",
+    "crypto": "^1.0.1",
+    "csv-parser": "^3.0.0",
+    "datauri": "^4.1.0",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.2.0",
+    "multer": "^1.4.5-lts.1",
+    "natural": "^8.0.1",
+    "nodemailer": "^6.9.10",
+    "simple-tokenizer": "^1.0.2",
+    "stopword": "^3.1.1",
+    "validator": "^13.11.0"
+  }
+}

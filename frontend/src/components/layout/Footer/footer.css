@@ -1,0 +1,268 @@
+.footer-outer {
+  background: linear-gradient(to right, rgba(76, 92, 234, 1), rgba(144, 23, 186, 1));
+}
+
+.footer {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 60px 20px 40px;
+}
+
+.footer .top-segment {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+}
+
+
+.footer .top-segment .left img {
+  width: 180px;
+  height: 45px;
+}
+
+.footer .top-segment .left #description {
+  font: 400 16px interLight;
+  color: white;
+  text-transform: capitalize;
+  margin: 30px 0 35px;
+  line-height: 25px;
+}
+
+.footer .top-segment .left #email {
+  font: 400 18px interRegular;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.footer .top-segment .left #email svg {
+  font-size: 40px;
+  margin-right: 10px;
+}
+
+.footer .top-segment .mid-and-right {
+  display: flex;
+}
+
+.footer .top-segment .mid-and-right  a{
+  transition: color .2s ease-in-out;
+}
+.footer .top-segment .mid-and-right  a:hover{
+  color: rgb(172, 168, 168);
+}
+
+.footer .top-segment .mid {
+  margin-left: 100px;
+}
+
+.footer .top-segment .mid h4 {
+  display: inline-block;
+  font: 400 20px interRegular;
+  color: white;
+  padding-bottom: 10px;
+  letter-spacing: 0.5px;
+  padding-bottom: 10px;
+  border-bottom: 4px dashed rgb(230, 218, 218);
+  margin-bottom: 12px;
+}
+
+.footer .top-segment .mid ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer .top-segment .mid ul a {
+  text-decoration: none;
+  padding: 8px 0;
+  color: white;
+  font: 400 16px interLight;
+  letter-spacing: 0.2px;
+}
+
+.footer .top-segment .right {
+  margin-left: 100px;
+}
+
+.footer .top-segment .right h4 {
+  font: 400 20px interRegular;
+  color: white;
+  padding-bottom: 10px;
+  letter-spacing: 0.5px;
+  border-bottom: 4px dashed rgb(230, 218, 218);
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.footer .top-segment .right ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer .top-segment .right ul a {
+  text-decoration: none;
+  padding: 8px 0;
+  color: white;
+  font: 400 16px interLight;
+  letter-spacing: 0.2px;
+}
+
+.footer .follow {
+  display: flex;
+
+  align-items: center;
+  margin-top: 40px;
+
+}
+
+.footer .follow span {
+  color: white;
+  font: 400 20px interRegular;
+
+}
+
+.footer .follow #yt {
+  width: 35px;
+  margin-left: 30px;
+
+}
+
+
+.footer .follow #fb,
+#ig,
+#tw {
+  width: 27px;
+  margin-left: 25px;
+}
+
+.footer .bottom-segment div {
+  width: 100%;
+  height: 3px;
+  background-color: #E7DEDE;
+  opacity: 0.3;
+  margin: 50px 0;
+}
+
+.footer .bottom-segment p {
+  color: white;
+  text-align: center;
+  font: 400 14px interLight;
+}
+
+@media screen and (min-width:500px ) and (max-width:700px) {
+  .footer .top-segment {
+    display: grid;
+    grid-template-columns: 1fr;
+
+  }
+
+  .footer .top-segment .mid-and-right {
+   margin-top: 40px;
+
+  }
+
+  .footer .top-segment .mid {
+    margin-left: 0;
+  }
+
+  .footer .top-segment .mid h4 {
+    font-size: 24px;
+  }
+
+  .footer .top-segment .mid ul a {
+    font-size: 18px;
+  } 
+
+  .footer .top-segment .right{
+    margin-left: 50px;
+  }
+
+  .footer .top-segment .right h4{
+    font-size: 24px;
+  }
+
+  .footer .top-segment .right ul a {
+    font-size: 18px;
+  } 
+
+  .footer .top-segment .left #description {
+    font-size: 18px;
+  
+  }
+  
+  .footer .top-segment .left #email {
+    font: 400 22px interRegular;
+  }
+
+}
+
+
+@media screen and (max-width:499px )  {
+  .footer .top-segment .left img {
+    width: 150px;
+    height: 40px;
+}
+
+  .footer .top-segment {
+    display: grid;
+    grid-template-columns: 1fr;
+
+  }
+
+  .footer .top-segment .mid-and-right {
+   margin-top: 40px;
+
+  }
+
+  .footer .top-segment .mid {
+    margin-left: 0;
+  }
+
+  .footer .top-segment .mid h4 {
+    font-size: 19px;
+  }
+
+  .footer .top-segment .mid ul a {
+    font-size: 16px;
+  } 
+
+  .footer .top-segment .right{
+    margin-left: 50px;
+  }
+
+  .footer .top-segment .right h4{
+    font-size: 19px;
+  }
+
+  .footer .top-segment .right ul a {
+    font-size: 16px;
+  } 
+
+  
+  .footer .top-segment .left #email {
+    font: 400 17px interRegular;
+  }
+
+  .footer .top-segment .left #email svg {
+    font-size: 35px;
+  }
+  
+
+    
+  .footer .follow .social-media a img{
+    margin-left: 5vmin !important;
+  }
+
+  .footer .top-segment .left #description {
+    font-size: 16px;
+  
+  }
+
+  .footer .follow span {
+    font-size: 19px;
+}
+
+.footer .bottom-segment p {
+  font-size: 13
+  px;
+}
+}

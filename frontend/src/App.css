@@ -1,0 +1,91 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face{
+  font-family: interBold;
+  src:url('./fonts/inter/Inter-Bold.ttf');
+}
+
+@font-face{
+  font-family: interLight;
+  src:url('./fonts/inter/Inter-Light-BETA.ttf');
+}
+
+@font-face{
+  font-family: interRegular;
+  src:url('./fonts/inter/Inter-Regular.ttf');
+}
+
+@font-face{
+  font-family: interSemibold;
+  src:url('./fonts/inter/Inter-SemiBold.ttf');
+}
+
+@font-face{
+  font-family: barlow;
+  src:url('./fonts/barlow/barlow.medium.ttf');
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  scroll-behavior:smooth;
+  box-sizing:content-box;
+}
+
+#root{
+  overflow: hidden;
+  width: 100%;
+}
+.container{
+  max-width: unset;
+  width: unset;
+}
+
+.table{
+  display: unset;
+}
+img, svg, video, canvas, audio, iframe, embed, object{
+  max-width: unset;
+  display: unset;
+  vertical-align: unset;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+body{
+  font-family: interRegular,interLight,sans-serif;
+  background-color: #F8F9FF;
+}
+
+input[type="text"]{
+  color: #000000;
+}
+
+#__react-alert__ span {
+  text-transform: none; 
+}
+#__react-alert__ > div > div > div {
+  min-width: 350px;
+}
+/* For WebKit-based browsers */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ffffff; /* Color of the track (background) */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #5967E5; /* Color of the thumb (handle) */
+}
+
+img{
+ width: unset;
+}

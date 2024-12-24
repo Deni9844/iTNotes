@@ -1,0 +1,360 @@
+.outer-notices {
+   padding: 70px 90px 0px;
+}
+
+.notices-container {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 30px;
+   max-width: 1250px;
+   margin: 0 auto;
+}
+
+.notices-container a {
+   text-decoration: none;
+   color: black;
+}
+
+.notices-container .notice {
+   display: flex;
+   flex-direction: column;
+   gap: 25px;
+   border-radius: 8px;
+   background-color: #ffffff;
+   padding: 30px;
+   cursor: pointer;
+
+}
+
+.notices-container .notice .top {
+   display: flex;
+   gap: 15px;
+}
+
+.notices-container .notice .top .icon {
+   border-radius: 6px;
+   display: flex;
+   transition: all .3s ease-in-out;
+
+}
+
+.notices-container .notice .type-item h4 {
+   font-size: 17px;
+
+}
+
+.notices-container .notice-box .top .icon {
+   padding: 14px 17px;
+   background-color: rgba(89, 103, 229, 0.25);
+}
+
+.notices-container .result-box .top .icon {
+   padding: 9px 12px;
+   background-color: #EDBBFF;
+}
+
+.notices-container .exam-schedule-box .top .icon {
+   padding: 13px 16px;
+   background-color: #FAD5D5;
+}
+
+.notices-container .notice .top .icon svg {
+   font-size: 28px;
+   align-self: center;
+   transition: all .3s ease-in-out;
+}
+
+.notices-container .result-box .top .icon svg {
+   color: #9017BA;
+}
+
+.notices-container .exam-schedule-box .top .icon svg {
+   color: #C81919;
+}
+
+.notices-container .notice-box .top .icon svg {
+   color: #5967E5;
+}
+
+.notices-container .result-box:hover .top .icon {
+   background-color: #9017BA;
+}
+
+.notices-container .exam-schedule-box:hover .top .icon {
+   background-color: #C81919;
+}
+
+.notices-container .notice-box:hover .top .icon {
+   background-color: #5967E5;
+}
+
+.notices-container .result-box:hover .top .icon svg,
+.notices-container .exam-schedule-box:hover .top .icon svg,
+.notices-container .notice-box:hover .top .icon svg {
+   color: #ffffff;
+}
+
+.notices-container .notice .type-time {
+   display: flex;
+   flex-direction: column;
+   gap: 6px;
+}
+
+.notices-container .notice .type-time p {
+   font: 400 14px interLight;
+}
+
+.notices-container .notice h3 {
+   display: inline;
+}
+
+.notice-details-container {
+   display: flex;
+   gap: 30px
+}
+
+.outer-notices h2 {
+   font-size: 28px;
+}
+
+.notice-details {
+   display: flex;
+   padding: 20px 0 50px;
+   justify-content: space-between;
+   width: 94%;
+   gap: 10px;
+}
+
+.notice-details div {
+   display: flex;
+   align-items: center;
+}
+
+.notice-details div p {
+   font: 400 16.5px interRegular;
+   color: rgb(58, 57, 57);
+}
+
+.notice-details div svg {
+   margin-right: 6px;
+   color: #3a46af;
+   font-size: 22px;
+}
+
+.read-notice {
+   height: 500px;
+   width: auto;
+   border: 2px solid #3a46af;
+   border-radius: 4px;
+}
+
+.like-unlike {
+   display: flex;
+   justify-content: center;
+   margin: 20px 0;
+}
+
+.like-unlike div {
+   padding: 6px 8px;
+   border: 1px solid #3a46af;
+   margin-right: 10px;
+   border-radius: 4px;
+   color: #3a46af;
+   cursor: pointer;
+}
+
+.like-unlike .unlike svg {
+   transform: rotate(180deg);
+}
+
+.like-unlike div svg {
+   font-size: 16px;
+   margin-right: 4px;
+}
+
+.like-unlike div span {
+   font: 400 14px interRegular;
+}
+
+.notice-details-container-right,
+.notice-details-container-left {
+   padding: 30px 25px;
+   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+   background-color: #ffffff;
+   height: fit-content;
+   border-radius: 4px;
+}
+
+.notice-details-container-right {
+   width: 30%;
+}
+
+.notice-details-container-right a{
+   text-decoration: none;
+   color: black;
+}
+
+.notice-details-container-left {
+   width: 70%;
+}
+.notice-details-container-right .hr-line {
+   height: 1px ;
+   background-color: rgba(58, 70, 175,0.2);
+}
+
+.notice-details-container-right .other-nt {
+   padding-bottom: 4px;
+   padding-left: 0;
+   font: 400 22px intersemiBold;
+}
+
+.notice-details-container-right .dashed {
+   display: flex;
+   margin-top: 7px;
+   margin-bottom: 16px;
+}
+
+.notice-details-container-right .dashed div {
+   height: 2.5px;
+   width: 40px;
+   background-color: #5967E5;
+   border-radius: 6px;
+}
+
+.notice-details-container-right .dashed div:first-child {
+   height: 2.5px !important;
+   width: 50px !important;
+   margin-right: 18px !important;
+}
+
+.notice-details-container-right p:not(.other-nt) {
+   font: 400 15px interRegular;
+   padding: 10px 0;
+   cursor: pointer;
+   transition: all .2s ease-in-out;
+}
+
+.notice-details-container-right p svg {
+   margin-right: 4px;
+   font-size: 12px;
+}
+
+.notice-details-container-right p:hover:not(.other-nt) {
+   color: #4552c9;
+   transform: translateX(8px);
+}
+
+
+
+@media screen and (min-width:550px) and (max-width:1150px) {
+   .notice-details div {
+      align-items: start;
+   }
+}
+
+@media screen and (max-width:900px) {
+   .outer-notices {
+      padding-left:  60px;
+      padding-right:  60px;
+   }
+}
+
+@media screen and (max-width:800px) {
+   .notices-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+   }
+
+   .notice-details-container {
+      flex-wrap: wrap;
+   }
+
+   .notice-details-container-left {
+      width: 100%;
+   }
+
+   .notice-details-container-right {
+      width: 100%;
+   }
+
+   .notice-details {
+      flex-wrap: wrap;
+   }
+}
+
+@media screen and (max-width:550px) {
+   .outer-notices {
+      padding-left:  30px;
+      padding-right:  30px;
+   }
+
+   .notices-container {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 30px;
+   }
+
+   .notices-container .notice h3 {
+      font-size: 19px;
+      line-height: 32px;
+  }
+
+   .notices-container .notice .type-time h4 {
+      font-size: 17px;
+   }
+
+   .notices-container .notice .type-time p {
+      font-size: 14px;
+   }
+
+   .notices-container .notice {
+      padding: 40px 30px;
+   }
+
+   .notice-details {
+      flex-direction: column;
+   }
+
+   .notice-details div p {
+      font-size: 18.5px;
+  }
+
+   .notice-details-container-right p:not(.other-nt) {
+      font-size: 16px;
+
+  }
+
+  .notices-container .notice-box .top .icon {
+   padding: 17px 20px;
+}
+
+.notices-container .result-box .top .icon {
+   padding: 12px 15px;
+}
+
+.notices-container .exam-schedule-box .top .icon {
+   padding: 12px 15px;
+
+}
+
+.notices-container .exam-schedule-box .top .icon svg{
+   font-size: 30px;
+}
+
+.outer-notices h2 {
+   font-size: 22px;
+   line-height: 30px;
+}
+
+.notice-details div p {
+   font-size: 15.5px;
+
+}
+
+.notice-details-container-right .other-nt {
+   font-size: 19px;
+}
+
+
+}

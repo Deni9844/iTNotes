@@ -1,0 +1,122 @@
+.updateProfileContainer {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(144, 23, 186, 0.2), rgba(89, 103, 229, 1));
+  position: fixed;
+  top: 0%;
+  left: 0;
+}
+
+.updateProfileBox {
+  background-color: white;
+  width: 30vw;
+  height: 330px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.updateProfileHeading {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.664);
+  font: 400 18px interSemibold;
+  padding: 1.3vmax;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+  width: 50%;
+  margin: auto;
+}
+
+.updateProfileForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  padding: 4vmax 3vmax;
+  justify-content: space-evenly;
+  gap: 30px;
+  transition: all 0.5s;
+}
+
+.updateProfileForm>div {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.updateProfileForm>div>input {
+  padding: 1.1vmax 4vmax;
+  padding-right: 1vmax;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.267);
+  border-radius: 4px;
+  font: 300 0.9vmax interRegular;
+  outline: none;
+}
+
+.updateProfileForm>div>svg {
+  position: absolute;
+  transform: translateX(1vmax);
+  font-size: 1.6vmax;
+  color: rgba(0, 0, 0, 0.623);
+}
+
+.updateProfileBtn {
+  border: none;
+  background-color: #965FD5;
+  color: white;
+  font: 300 0.95vmax interSemibold;
+  width: 100%;
+  padding: 0.85vmax;
+  cursor: pointer;
+  transition: all 0.5s;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+}
+
+.updateProfileBtn:hover {
+  background-color: #7a47b4;
+}
+
+@media screen and (max-width: 650px) {
+  .updateProfileContainer {
+    background-color: white;
+  }
+
+  .updateProfileBox {
+    width: 95vw;
+    height: 320px !important;   
+  }
+
+  .updateProfileBox.big {  
+    height: 420px !important;
+  }
+
+  .updateProfileHeading {
+    font-size: 4.5vw;
+  }
+
+  .updateProfileForm {
+    padding: 5vmax;
+    gap: 35px;
+  }
+
+  .updateProfileForm>div>input {
+    padding: 2.0vmax 5vmax;
+    font: 300 1.7vmax interRegular;
+  }
+
+  .updateProfileForm>div>svg {
+    font-size: 2.8vmax;
+  }
+
+  .updateProfileBtn {
+    font: 300 1.8vmax interSemiBold;
+    padding: 1.5vmax;
+  }
+}

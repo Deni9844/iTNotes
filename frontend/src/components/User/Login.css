@@ -1,0 +1,384 @@
+.form-outer {
+  background: linear-gradient(to bottom, rgba(144, 23, 186, 0.2), rgba(89, 103, 229, 1));
+  padding:  100px 20px
+
+}
+
+.form {
+  max-width: 750px;
+  margin: 0 auto;
+  background-color: rgba(248, 249, 255, 0.3);
+  border-radius: 15px;
+  box-shadow: 0px 2px 10px 4px rgba(144, 23, 186, 0.2);
+}
+
+.form .form-top {
+  display: flex;
+
+
+}
+
+.form .form-top p {
+  width: 50%;
+  height: 70px;
+  border-radius: 15px 0 0 0;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font: 400 18px interSemibold;
+  transition: background-color .3s ease-in-out;
+}
+
+.form .form-top p:last-child {
+  border-radius: 0 15px 0 0;
+}
+
+.form .form-top .active {
+  background: linear-gradient(to bottom, #7570e3, rgba(144, 23, 186, 0.6));
+  color: white;
+}
+
+.form .form-top .inactive {
+  background-color: white;
+  color: #965FD5;
+}
+
+.form .form-body {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  place-items: center;
+  transition: all .4s ease-in-out;
+}
+
+.form .all-body {
+  display: grid;
+  grid-template-columns: repeat(2,100%);
+  overflow: hidden;
+}
+
+.form .form-body .body-left {
+  padding: 80px 0;
+  place-self: start;
+}
+
+.form .form-body .cover-img {
+  width: 300px;
+}
+
+.form .form-body form {
+  place-self: start;
+}
+
+.form .signup-active img
+{
+  width: 260px !important;
+  margin-left: 23%;
+}
+
+.form .form-body .body-left .email,.form .form-body .body-left .password {
+  position: relative;
+}
+
+.form .form-body .body-left svg {
+  position: absolute;
+  padding: 14px 13px;
+  font-size: 24px;
+  color: #965FD5;
+
+}
+
+.form .form-body .body-left .passwordToggle {
+  font-size: 16px;
+  padding: 18px 14px;
+  right: 0;
+}
+
+.form .form-body .body-left .add-profile {
+  display: flex;
+  align-items: center;
+  margin: 10px 0 15px;
+}
+
+.form .form-body .body-left .add-profile svg{
+  position: static;
+  font-size: 40px;
+}
+
+.form .form-body .body-left .add-profile div:first-child {
+  border-radius: 60%;
+  background-color: white;
+  height: 50px;
+  width: 50px;
+  display: grid;
+  place-items: center;
+  border: 2px solid #965FD5;
+
+}
+
+.form .form-body .body-left .add-profile div:first-child img{
+  width: 40px !important;
+  margin-right: 16px;
+}
+
+.form .form-body .body-left .add-profile div:last-child {
+  background-color: #965FD5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  border-radius: 23px;
+  color: white;
+  padding-left:20px;
+  padding-right: 5px;
+  font: 200 14px interRegular;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.form .form-body .body-left .add-profile div:last-child:hover  {
+  background-color: #9145e7;
+}
+
+.form .form-body .body-left .add-profile div:last-child svg {
+color: white;
+padding: 0;
+margin-left: 4px;
+font-size: 30px;
+  
+}
+
+.form .form-body .body-left input[type="email"],
+.form .form-body .body-left input[type="password"],.form .form-body .body-left input[type="text"] {
+  outline: none;
+  border: none;
+  padding: 18px 20px 18px 50px;
+  width: 220px;
+  margin-bottom: 15px;
+  border-radius: 11px;
+  font: 200 13px interRegular;
+  color: #8243ca;
+  font: 400 14px interSemibold;
+
+}
+
+.form .form-body .body-left input::placeholder {
+  color: rgb(169, 116, 230);
+  font: 400 13px interLight;
+  opacity: 0.8;
+}
+
+.form .form-body .body-left input[type="submit"] {
+  border: none;
+  height: 42px;
+  width: 290px;
+  border-radius: 6px;
+  background-color: #965FD5;
+  color: white;
+  cursor: pointer;
+  font: 400 14px interSemibold;
+  margin-top: 10px;
+  transition: all .2s ease-in-out;
+}
+
+.form .form-body .body-left input[type="submit"]:hover {
+  background-color: #9145e7;
+
+}
+
+
+
+.form .form-body .body-left .or {
+  color: white;
+  font: 400 16px interSemibold;
+  margin: 20px 0 -15px;
+  text-align: center;
+}
+
+.form .form-body .body-left .sign-in-with {
+  display: flex;
+  align-items: center;
+}
+
+.form .form-body .body-left .sign-in-with .fb {
+ position: relative;
+ transform: translateY(-5%);
+}
+
+.form .form-body .body-left .sign-in-with .fb button {
+  color: transparent;
+    height: 50px;
+    width: 50px;
+    z-index: 1;
+    position: relative;
+    opacity: 0;
+ }
+
+ .form .form-body .body-left .sign-in-with .fb img{
+  position: absolute;
+  left: 0;
+  bottom: 20%;
+ }
+
+.form .form-body .body-left .sign-in-with img {
+  width: 50px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.form .form-body .body-left .sign-in-with img:hover,.form .form-body .body-left .sign-in-with .fb:hover img {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.form .form-body .body-left .l-para a {
+  text-decoration: none;
+  color: white;
+}
+
+.form .form-body .body-left .l-para {
+  color: white;
+  font: 400 14px interRegular;
+  margin-top: 20px;
+}
+
+.form .form-body .body-left .l-para span {
+  font-size: 14.5px;
+  font-family: interRegular;
+  color: white;
+}
+
+.form .form-body .body-left .l-para span:hover {
+  font-family: interSemibold;
+}
+
+.form .login-active {
+  transform: translateX(0);
+
+}
+
+.form .login-inactive {
+  transform: translateX(-800px);
+}
+
+.form .signup-active {
+ transform: translateX(-100%);
+}
+
+.form .signup-inactive {
+  transform: translateX(50px);
+}
+
+@media screen and (max-width:700px){
+  .form .form-body form {
+    width: 100%;
+  }
+  .form .form-body {
+    grid-template-columns: repeat(1, 100%);
+}
+
+.form .form-body .cover-img {
+  padding-top: 40px;
+}
+
+.form .form-body .body-left {
+  padding: 50px 0px;
+  margin: 0 auto;
+}
+
+.form .form-body .body-left svg {
+  font-size: 30px;
+
+}
+
+.form .form-body .body-left input[type="email"],
+.form .form-body .body-left input[type="password"],.form .form-body .body-left input[type="text"]{
+  width: 78%;
+  padding: 18px 18px 18px 50px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.form .form-body .body-left input[type="submit"] {
+  height: 45px;
+  width: 100%;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.form .form-body .body-left input::placeholder {
+  color: rgb(169, 116, 230);
+  font: 400 15px interLight;
+  opacity: 0.8;
+}
+
+.form .form-body .body-left .or {
+  font-size: 18px;
+  margin: 15px 0
+}
+
+.form .form-body .body-left .sign-in-with img {
+  width: 50px;
+}
+.form .form-body .body-left .sign-in-with .fb img{
+  position: absolute;
+  left: 0;
+  bottom: 17%;
+ }
+
+
+.form .form-body .body-left .sign-in-with p{
+ font-size: 16px;
+}
+
+.form .form-body .body-left .l-para {
+  font-size: 16px ;
+  margin: 20px 0;
+
+}
+.form .form-body .body-left .l-para span {
+  font-size: 17px;
+
+}
+}
+
+@media screen and (min-width:500px) and (max-width:700px) {
+.form .form-body .body-left {
+  width: 60%;
+}
+
+.form .form-body .body-left .passwordToggle {
+  font-size: 18px;
+  padding: 18px 14px;
+  right: 0%;
+  top: 6%;
+}
+}
+
+
+@media screen  and (max-width:500px) {
+.form .form-body .cover-img {
+  width: 240px;
+}
+.form .form-body .body-left .passwordToggle {
+  font-size: 18px;
+  padding: 24px 8px;
+  top:-5%;
+  right:2px;
+}
+
+.form .form-body .body-left .l-para span {
+  font-family: interSemibold;
+}
+
+.form .form-top p {
+  height: 60px;
+  font-size: 17px;
+}
+
+.form .signup-active .body-left {
+  padding: 50px 25px;
+  margin: 0 auto;
+}
+
+}
+

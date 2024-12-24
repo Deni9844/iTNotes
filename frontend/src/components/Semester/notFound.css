@@ -1,0 +1,80 @@
+.not-found {
+    display: flex;
+    justify-content: space-between;
+    max-width:690px;
+    gap: 20px;
+    border-radius: 8px;
+    border: 1px solid #5967E5;
+    margin: 0 auto;
+    padding: 20px;
+    align-items: center;
+}
+
+.not-found div:first-child {
+  padding: 30px ;
+  border-radius: 100%;
+  background-color: rgba(89, 103, 229,0.5);
+  display:grid;
+  place-items: center;
+}
+
+.not-found div:first-child svg {
+    width:35px;
+    height:35px;
+  }
+
+  .not-found div:first-child svg path{
+    fill: rgb(89, 103, 229);
+  }
+
+  .not-found div:nth-child(2) p:first-child{
+    font: 400 20px intersemiBold;
+    margin-bottom: 10px;
+  }
+
+  .not-found div:nth-child(2) p:last-child{
+    font: 400 15px interRegular;
+  }
+
+  .not-found button {
+    padding: 12px 16px;
+    font: 200 13px intersemiBold;
+    text-transform: uppercase;
+    background-color: #5967E5;
+    color:#ffffff;
+    border: none;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width:550px) {
+
+    .not-found {
+        justify-content:center;
+        text-align: center;
+        flex-wrap: wrap;
+    
+    }
+
+    .not-found div:first-child {
+        padding: 22px !important;
+
+    }
+
+    .not-found div:nth-child(2) p:first-child {
+        font-size: 20px !important;
+    }
+
+    .not-found div:nth-child(2) p:last-child {
+        font-size:16px !important;
+    }
+
+    .not-found button {
+        padding: 12px 20px !important;
+        font: 200 14px intersemiBold !important;
+    }
+
+    .not-found div:first-child svg {
+      width:30px;
+      height:30px;
+    }
+}
