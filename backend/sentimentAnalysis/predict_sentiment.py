@@ -31,8 +31,8 @@ def predict_class(text):
     return sentiment_classes[yt[0]]
 
 # Read input text from sys.argv[1]
-#input_text = sys.argv[1]
-input_text = "very bad"
+input_text = sys.argv[1]
+
 
 # Predict sentiment
 predicted_sentiment = predict_class(input_text)
