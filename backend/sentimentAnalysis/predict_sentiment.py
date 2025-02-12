@@ -10,10 +10,10 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # Suppress TensorFlow logs (1=INFO, 2=
 tf.get_logger().setLevel('ERROR')         # Suppress runtime logs
 
 # Load model and tokenizer
-model_path = os.path.join(os.getcwd(), 'backend/sentimentAnalysis/model', 'best_model.keras')
+model_path = os.path.join(os.getcwd(), 'model', 'best_model.keras')
 model = load_model(model_path)
 
-tokenizer_path = os.path.join(os.getcwd(), 'backend/sentimentAnalysis', 'tokenizer.pickle')
+tokenizer_path = os.path.join(os.getcwd(), '', 'tokenizer.pickle')
 with open(tokenizer_path, 'rb') as handle:
     tokenizer = pickle.load(handle)
 
@@ -31,7 +31,8 @@ def predict_class(text):
     return sentiment_classes[yt[0]]
 
 # Read input text from sys.argv[1]
-input_text = sys.argv[1]
+#input_text = sys.argv[1]
+input_text = "very bad"
 
 # Predict sentiment
 predicted_sentiment = predict_class(input_text)
