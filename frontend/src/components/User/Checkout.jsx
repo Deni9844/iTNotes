@@ -285,7 +285,7 @@ const Checkout = () => {
                                     type="text"
                                     id="success_url"
                                     name="success_url"
-                                    value="http://localhost:3000/paymentSuccess"
+                                    value="https://itnotes-1.onrender.com/paymentSuccess"
                                     class="form"
                                     required=""
                                 />
@@ -299,7 +299,7 @@ const Checkout = () => {
                                     type="text"
                                     id="failure_url"
                                     name="failure_url"
-                                    value={`http://localhost:3000/paymentFail?id=${data.purchasedItemData._id}`}
+                                    value={`https://itnotes-1.onrender.com/paymentFail?id=${data.purchasedItemData._id}`}
                                     class="form"
                                     required=""
                                 />
