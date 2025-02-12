@@ -3,7 +3,6 @@ const app = express()
 const bodyParser = require('body-parser')
 const ErrorMiddleware = require('./middleware/error')
 const cookieParser = require('cookie-parser')
-const dotenv = require("dotenv")
 const path = require('path')
 
 
@@ -13,7 +12,9 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(cookieParser());
 
 //locating dot env file
-dotenv.config({path:"backend/config/config.env"})
+if(process.env.NODE_ENV !== "PRODUCTION"){
+    require("dotenv").dotenv.config({path:"backend/config/config.env"})
+}
 
 //Routes imports
 const semester = require('./routes/semesterRoute')
