@@ -1,4 +1,1 @@
-tensorflow
-pickle
-sys
-os
+tensorflow==2.12.0
