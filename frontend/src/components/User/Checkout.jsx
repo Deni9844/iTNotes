@@ -2,10 +2,14 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useLocation,useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useSelector } from 'react-redux'
+import { useAlert } from 'react-alert'
 const Checkout = () => {
     const [data, setData] = useState(null)
     const buttonRef = useRef(null);
     const [isClicked ,setIsClicked] = useState(false)
+    const [name,setName] = useState(null)
+    const [email,setEmail] = useState(null)
+    const [phoneNum,setPhoneNum] = useState(null)
 
     const navigate = useNavigate()
 
@@ -19,6 +23,7 @@ const Checkout = () => {
 
     const amt = mnth === 1 ? 200 : mnth === 6 ? 300 : 500
     const plan = mnth === 1 ? "monthly" : mnth === 6 ? "quarterly" : "yearly"
+    const alert = useAlert()
 
     const [totalAmt, setTotalAmt] = useState(amt)
 
@@ -40,15 +45,23 @@ const Checkout = () => {
     }, [slot, amt,mnth, isAuthenticated])
 
     const initiateEsewa = async () => {
+         if(!name || !email || !phoneNum){
+           alert.error("Please provide all the required details")
+           setIsClicked(false)
+           return 
+         }
+
         try {
             const config = {
                 headers: {
                     "Content-Type": "application/json",
                 },
             };
-            console.log(mnth,numOfSlot,id)
             const dataPayload = {
                 slot,
+                email,
+                phoneNum,
+                name,
                 plan,
                 ...(id != null && { id }),
             };
@@ -81,13 +94,13 @@ const Checkout = () => {
                             <h2 className='uppercase font-bold text-2xl mb-2'>billing details</h2>
                             <div className='ml-2'>
                                 <p className='pt-5 text-lg pb-2'>Full Name <span className='text-red-500'>*</span></p>
-                                <input className='text-[1.07rem] border-[1px] border-solid border-slate-400 outline-none rounded
+                                <input onChange={(e) => setName(e.target.value)} className='text-[1.07rem] border-[1px] border-solid border-slate-400 outline-none rounded
                             p-2 w-[95%] sm:w-[90%]' type="text" />
                                 <p className='pt-5 text-lg pb-2'>Phone <span className='text-red-500'>*</span></p>
-                                <input className='text-[1.07rem] border-[1px] border-solid border-slate-400 outline-none rounded
+                                <input  onChange={(e) => setPhoneNum(e.target.value)} className='text-[1.07rem] border-[1px] border-solid border-slate-400 outline-none rounded
                             p-2  w-[95%] sm:w-[90%]' type="number" />
                                 <p className='pt-5 text-lg pb-2'>Email address <span className='text-red-500'>*</span></p>
-                                <input className='text-[1.07rem] border-[1px] border-solid border-slate-400 outline-none rounded
+                                <input onChange={(e) => setEmail(e.target.value)} className='text-[1.07rem] border-[1px] border-solid border-slate-400 outline-none rounded
                             p-2  w-[95%] sm:w-[90%]' type="text" />
                             </div>
                         </div>

@@ -26,6 +26,7 @@ dotenv.config({path:"backend/config/config.env"})
 //connecting to database
 connectDatabase();
 
+
 //cloudinary configuration
 cloudinary.config({
     cloud_name : process.env.CLOUDINARY_NAME,

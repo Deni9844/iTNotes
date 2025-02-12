@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const validator = require('validator')
 
 // Define the schema for the purchased item
 const purchasedItemSchema = new mongoose.Schema(
@@ -8,6 +9,20 @@ const purchasedItemSchema = new mongoose.Schema(
             ref: "User",
             required: true,
         },
+        email: {
+            type: String,
+            required: [true, "Please Enter Your Email"],
+            unique: true,
+            validate: [validator.isEmail, "Please provide a valid email"]
+        },
+        name:{
+            type: String,
+            required: [true, "Please Enter Your Name"],
+        }
+        ,phoneNum:{
+            type: Number,
+            required: [true, "Please Enter Your Phone number"],
+        },
         totalPrice: {
             type: Number,
             required: true,
@@ -15,7 +30,7 @@ const purchasedItemSchema = new mongoose.Schema(
         plan: {
             type: String,
             enum: ["monthly", "quarterly", "yearly"],
-            required:true
+            required: true
         },
         slot: {
             type: Number,
@@ -23,8 +38,8 @@ const purchasedItemSchema = new mongoose.Schema(
         },
         startDate: {
             type: Date,
-            default:Date.now,
-            required:true
+            default: Date.now,
+            required: true
         },
         endDate: {
             type: Date,
@@ -32,7 +47,7 @@ const purchasedItemSchema = new mongoose.Schema(
         },
         status: {
             type: String,
-            enum: ["pending", "completed", "cancelled","expired"],
+            enum: ["pending", "completed", "cancelled", "expired"],
             default: "pending"
         }
     },

@@ -1,3 +1,39 @@
+.bar-chart .css-1qdzy9k-MuiBarElement-root{
+    fill: #0ba4ac;
+}
+.bar-chart .css-3dcfwk-MuiBarElement-root
+{
+ fill: #5045d2;
+}
+
+.bar-chart .css-adnr9q-MuiBarElement-root
+{
+ fill: #f31010;
+}
+
+.MuiChartsLegend-series-auto-generated-id-0 .MuiChartsLegend-mark{
+    fill: #0ba4ac;
+}
+
+.MuiChartsLegend-series-auto-generated-id-1 .MuiChartsLegend-mark{
+    fill: #5045d2;
+}
+
+.MuiChartsLegend-series-auto-generated-id-2 .MuiChartsLegend-mark{
+    fill: #f31010;
+}
+.bar-chart select{
+    width: fit-content;
+    position: absolute;
+    right: 100px;
+    padding: 6px 4px 6px 12px;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+
 .dashboard-panel-top-outer {
     position: relative;
 }

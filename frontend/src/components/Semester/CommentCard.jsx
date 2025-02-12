@@ -14,13 +14,10 @@ const CommentCard = ({ itemComm, isAuthenticated, forCmp }) => {
 
   return (
     <Fragment>
-      <div className="comment-box" style={{ alignItems: 'start' }}>
+      <div className="comment-box" >
         <div className="profile" style={{ background: `url(${itemComm.profileImg}) no-repeat center/cover` }}>
         </div>
-        <div className="comment-details" style={{
-          borderRight: itemComm.sentiment === "Positive" ? '3px solid #3dec3d' :
-            itemComm.sentiment === "Negative" ? '3px solid #ff6767' : '3px solid #b9b9b9', borderRadius: '4px'
-        }}>
+        <div className="comment-details" >
           <PartialComponent itemComm={itemComm} item={itemComm} isAuthenticated={isAuthenticated} forCmp={forCmp} />
 
           {itemComm.replies.length > 0 && <p className='n-replies' onClick={() => setShowAllReplies(!showAllReplies)}>
@@ -33,13 +30,11 @@ const CommentCard = ({ itemComm, isAuthenticated, forCmp }) => {
                 <div>
                   {
                     index < bound &&
-                    <div className="comment-box" style={{ alignItems: 'start' }}>
+                    <div className="comment-box" style={{ alignSelf: 'start' }}>
                       <div className="profile" style={{ background: `url(${replyItem.profileImg}) no-repeat center/cover` }}>
                       </div>
-                      <div className="comment-details" style={{
-                        borderRight: replyItem.sentiment === "Positive" ? '3px solid #3dec3d' :
-                        replyItem.sentiment === "Negative" ? '3px solid #ff6767' : '3px solid #b9b9b9', borderRadius: '4px'
-                      }}>
+                      <div className="comment-details" >
+                       
                         <PartialComponent item={replyItem} itemComm={itemComm} isAuthenticated={isAuthenticated} from={'rpy'} forCmp={forCmp} />
                       </div>
                     </div>

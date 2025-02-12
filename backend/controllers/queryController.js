@@ -115,7 +115,8 @@ exports.replyQuery = catchAsyncErrors(async (req, res, next) => {
         await sendEmail({
             email: query.email,
             subject: "Question Response",
-            message:"The answer to your question submitted to ItNotes is provided in the attachment below. Please download it to view the answer.",
+            message:`The answer to your question submitted to ItNotes is provided in the attachment below. 
+            Please download it to view the answer`,
             file: {
                 content: fileUri.content, // The Data URI content
                 mimetype: file.mimetype // File MIME type

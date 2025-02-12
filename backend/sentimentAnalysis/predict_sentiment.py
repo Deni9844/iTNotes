@@ -1,7 +1,7 @@
 import os
 import sys
 import pickle
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import tensorflow as tf
 
@@ -38,3 +38,4 @@ predicted_sentiment = predict_class(input_text)
 
 # Output only the sentiment class
 print(predicted_sentiment)
+

@@ -9,7 +9,7 @@ const ApiFeatures = require('../utils/apiFeatures');
 //Intialize the esewa payment
 exports.initializeEsewa = catchAsyncErrors(async (req, res, next) => {
     try {
-        const { plan, slot, id } = req.body;
+        const { plan, slot, id, name, email, phoneNum} = req.body;
 
         const amt = plan === "monthly" ? 200 : plan === "quarterly" ? 300 : 500
 
@@ -27,6 +27,9 @@ exports.initializeEsewa = catchAsyncErrors(async (req, res, next) => {
 
         const purchasedItemData = await PurchasedItem.create({
             user: req.user._id,
+            email,
+            name,
+            phoneNum,
             totalPrice: Number(totalAmt),
             endDate,
             plan,
@@ -155,8 +158,6 @@ exports.expirePurchase = catchAsyncErrors(async (req, res, next) => {
 
 //get all purchase records
 exports.getAllPurchases = catchAsyncErrors(async (req, res, next) => {
-
-    console.log(`page = ${req.query.page}`)
 
     const apiFeatures = new ApiFeatures(PurchasedItem.find({ user: req.user._id }), req.query, "")
     .filter()

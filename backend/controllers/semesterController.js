@@ -769,9 +769,7 @@ exports.addQtnsBank = catchAsyncErrors(async (req, res, next) => {
 //Update the question bank
 exports.updateQtnBank = catchAsyncErrors(async (req, res, next) => {
     const { year, id } = req.body;
-    console.log(req.body)
     const { level: semester, sub: subject, yrs } = req.params;
-    console.log(typeof yrs)
     const check = {
         error: false
     }

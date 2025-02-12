@@ -109,7 +109,6 @@ const Login = ({ val }) => {
         })
         .then((res) => {
           setFacebookProfile(res.data);
-          console.log('data:',res.data)
         })
         .catch((err) => {
           setErr(`Facebook Login Failed !!`);

@@ -527,6 +527,17 @@
 
 }
 
+.comments .comment-box .comment-details {
+   display: flex;
+   flex-direction: column;
+
+}
+
+.comments .comment-box .comment-details svg {
+   
+   align-self: flex-end;
+}
+
 .comments .comments-container .comment-box .comment-details {
    margin-left: 15px;
    width: 100%;
@@ -582,12 +593,17 @@
    padding: 8px 0 !important;
 }
 
+.comments .comments-container .comment-box .comment-details .recommend-icon svg{
+   font-size: 23px;
+}
+
 
 .comments .comments-container .comment-box .comment-details div svg {
    font-size: 16px;
    padding-right: 2px;
    cursor: pointer;
 }
+
 
 .comments .comments-container .comment-box .comment-details div span {
    font: 200 13px interRegular;

@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const ErrorMiddleware = require('./middleware/error')
 const cookieParser = require('cookie-parser')
 const dotenv = require("dotenv")
+const path = require('path')
 
 
 //Here when we use use() we are basically specifying the middleware
@@ -32,5 +33,14 @@ app.use('/api/v1',user);
 app.use('/api/v1',payment);
 
 app.use(ErrorMiddleware)
+
+//for production
+const _dirname = path.resolve();
+
+
+app.use(express.static(path.join(_dirname,"/frontend/build")));
+app.get('*', (_,res) => {
+    res.sendFile(path.resolve(_dirname,"frontend", "build", "index.html"))
+});
 
 module.exports = app

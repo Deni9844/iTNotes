@@ -13,6 +13,7 @@ import BookSection from './BookSection.jsx'
 import LabSection from './LabSection.jsx'
 import VivaSection from './VivaSection.jsx'
 import { addNewSubject, deleteSubject, updateSubject } from '../../actions/adminAction.js'
+import { BarChart } from '@mui/x-charts/BarChart';
 import {
   BOOK_DELETED,
   BOOK_EDITED,
@@ -36,13 +37,20 @@ const SemesterPanel = ({ isHover, setIsHover, setActiveOption, width, setLevel, 
   const [subjectObj, setSubjectObj] = useState({})
   const [subjectCode, setSubjectCode] = useState('')
   const [num, setNum] = useState(0)
+  const [positive, setPositive] = useState([])
+  const [negative, setNegative] = useState([])
+  const [neutral, setNeutral] = useState([])
+  const [chaptersName, setChaptersName] = useState([])
+  const [choosedSub, setChoosedSub] = useState("")
+  const [subCode, setSubCode] = useState(null)
+
 
   const [newSubjectObj, setNewSubjectObj] = useState({
     code: '',
     description: '',
     subject: '',
   });
-  
+
   const [editedSubjectObj, setEditedSubjectObj] = useState({})
   const [newSubjectPopup, setNewSubjectPopup] = useState()
 
@@ -91,11 +99,11 @@ const SemesterPanel = ({ isHover, setIsHover, setActiveOption, width, setLevel, 
 
   const { subjects, loading, error, totalSub, resultPerPage } = useSelector(state => state.semester)
   const { isSubAdded, loading: newLoader, isChAdded, error: newCreatedErr, isQtnAdded, isQtnBankAdded,
-    isBookAdded, isLabAdded,isVivaAdded
+    isBookAdded, isLabAdded, isVivaAdded
   } = useSelector(state => state.new)
   const { loading: updateDeleteLoader, isSubDeleted, isSubUpdated, isChUpdated, isChDeleted, isQtnUpdated, isQtnDeleted,
-    error: deleteUpdateErr, isQtnBankUpdated, isQtnBankDeleted, isBookUpdated, isBookDeleted, isLabUpdated, isLabDeleted ,
-   isVivaUpdated,isVivaDeleted} = useSelector((state) => state.profile)
+    error: deleteUpdateErr, isQtnBankUpdated, isQtnBankDeleted, isBookUpdated, isBookDeleted, isLabUpdated, isLabDeleted,
+    isVivaUpdated, isVivaDeleted } = useSelector((state) => state.profile)
 
   const handleAction = (subObj) => {
     setPopupToggle(true);
@@ -136,6 +144,55 @@ const SemesterPanel = ({ isHover, setIsHover, setActiveOption, width, setLevel, 
   }
 
   useEffect(() => {
+    if (subjects.length )
+      setSubCode(subjects[0].code)
+  }, [subjects]);
+
+  useEffect(() => {
+    dispatch(getAllSubjects(level, currentPage));
+    setNum((currentPage - 1 || 0) * 5);
+  }, [currentPage, level]);
+
+  useEffect(() => {
+    if (choosedSub) {
+      const chArr = [];
+      const newPositive = [];
+      const newNeutral = [];
+      const newNegative = [];
+
+      choosedSub.chapters.forEach((ch) => {
+        let pos = 0, neg = 0, neu = 0;
+        chArr.push(ch.name)
+        if (ch.comments) {
+          ch.comments.forEach((c) => {
+            if (c.sentiment === "Positive") {
+              pos++;
+            } else if (c.sentiment === "Negative") {
+              neg++;
+            } else {
+              neu++;
+            }
+          });
+          newPositive.push(pos);
+          newNeutral.push(neu);
+          newNegative.push(neg);
+        }
+
+      });
+
+
+      setChaptersName(chArr)
+      setPositive(newPositive);
+      setNeutral(newNeutral);
+      setNegative(newNegative);
+
+    }
+
+  }, [choosedSub]);
+
+
+
+  useEffect(() => {
     if (permission) {
       setPermission(false)
       dispatch(deleteSubject(level, subjectObj.subject));
@@ -147,6 +204,11 @@ const SemesterPanel = ({ isHover, setIsHover, setActiveOption, width, setLevel, 
 
 
   }, [permission, dispatch, level, subjectObj.subject, subjects])
+
+  useEffect(() => {
+    const sub = subjects.find(sub => sub.code === subCode)
+    setChoosedSub(sub)
+  }, [subCode, subjects])
 
 
   useEffect(() => {
@@ -310,15 +372,10 @@ const SemesterPanel = ({ isHover, setIsHover, setActiveOption, width, setLevel, 
     subjectCode, chapterObj, editedChapterObj, qtnChName, qtnSubCode, questionObj,
     editedQuestionObj, qtnBankSubCode, questionBankObj, editedQuestionBankObj,
     bookSubCode, editedBookObj, bookSubCodePrev, labObj, editedLabObj, labSubCode, labSubCodePrev,
-    isVivaAdded,isVivaUpdated,isVivaDeleted,editedVivaObj,vivaSubCode,vivaSubCodePrev,
+    isVivaAdded, isVivaUpdated, isVivaDeleted, editedVivaObj, vivaSubCode, vivaSubCodePrev,
     dispatch, alert
   ]);
 
-
-  useEffect(() => {
-      dispatch(getAllSubjects(level, currentPage));
-      setNum((currentPage - 1  || 0) * 5);
-  }, [ currentPage,level]);
 
 
   return (
@@ -327,6 +384,33 @@ const SemesterPanel = ({ isHover, setIsHover, setActiveOption, width, setLevel, 
         loading || newLoader || updateDeleteLoader ? <Loader /> : (
           <Fragment>
             <div className="dashboard-panel-top-outer">
+
+              <div className="bar-chart" style={{ display: 'flex', margin: '50px 0 30px', flexDirection: 'column', alignItems: 'center' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+                  <h2 style={{ font: '400 22px interSemibold', color: '#5967E4', marginBottom: '16px' }}>Comments</h2>
+                  <select style={{ right: '240px' }} onChange={(e) => setSubCode(e.target.value)} value={subCode}>
+                    <option value=''>Select Sub code</option>
+                    {
+                      subjects && subjects.map((sub, i) => (
+                        <option key={i} value={sub.code}>{sub.code}</option>
+                      ))
+                    }
+                  </select>
+                </div>
+                {
+                  choosedSub && <BarChart style={{ height: '28vmax', width: '100%' }}
+                    xAxis={[{ scaleType: 'band', data: chaptersName }]}
+                    series={[
+                      { label: 'Positive', data: positive },
+                      { label: 'Neutral', data: neutral },
+                      { label: 'Negative', data: negative }
+                    ]}
+                    width={500}
+                    height={300}
+                  /> 
+                }
+
+              </div>
               <div className={`sem-item ${isHover ? 'active' : 'inactive'}`} style={{ left: width < 570 ? '30px' : '10px' }} onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)} >
                 <ul>
                   <li onClick={() => { setActiveOption('semester'); setIsHover(false); setLevel('first') }} style={{ fontSize: width < 570 ? '15px' : '16px', padding: width < 570 ? '14px 20px' : 'auto' }}>First Semester</li>

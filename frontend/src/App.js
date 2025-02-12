@@ -76,7 +76,6 @@ function App() {
               { id },
               { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
             );
-            console.log("subscription expired");
           } catch (error) {
             console.error("Error:", error);
           }
