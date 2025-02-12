@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node backend/server.js",
-    "dev": "nodemon backend/server.js",
+    "dev": "node backend/server.js",
     "build":"npm install --force && npm install --force --prefix frontend && npm run build --prefix frontend",
     "train": "node backend/sentimentAnalysis/train.js",
     "predict": "node backend/sentimentAnalysis/predict.js"
