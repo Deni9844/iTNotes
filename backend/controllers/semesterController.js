@@ -1313,7 +1313,7 @@ exports.addComment = catchAsyncErrors(async (req, res, next) => {
         return next(new ErrorHandler("Chapter is not found", 404));
     
     try {
-        comment.sentiment = await getSentimentPrediction(text);
+        //comment.sentiment = await getSentimentPrediction(text);
     } catch (error) {
         console.error('Error in sentiment prediction:', error);
         return next(new ErrorHandler("Failed to analyze comment sentiment", 500));
@@ -1356,7 +1356,7 @@ exports.replyComment = catchAsyncErrors(async (req, res, next) => {
 
     try {
         // Wait for sentiment prediction
-        comment.sentiment = await getSentimentPrediction(text);
+       // comment.sentiment = await getSentimentPrediction(text);
     } catch (error) {
         console.error('Error in sentiment prediction:', error);
         return next(new ErrorHandler("Failed to analyze comment sentiment", 500));
